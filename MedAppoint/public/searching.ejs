@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MedAppoint</title>
+  <!-- -------- anime css ------ -->
+  <link rel="stylesheet" href="assets/css/animate.css">
+  <!-- --------- tiny slider css ------ -->
+  <link rel="stylesheet" href="assets/css/tiny-slider.css">
+  <!-- --------- font awsome css ------ -->
+  <link rel="stylesheet" href="assets/css/all.css">
+  <!-- -------- venobox css ------- -->
+  <link rel="stylesheet" href="assets/css/venobox.css" type="text/css" media="screen" />
+  <!-- ---- Bootstrap css--- -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <!-- ---------- default css --------- -->
+  <link rel="stylesheet" href="assets/css/default.css">
+  <!-- --- style css -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/search.css">
+</head>
+
+<body>
+  <!-- --------- preloader ------------ -->
+  <div class="preloader">
+    <div class="loader">
+      <div class="spinner">
+        <div class="spinner-container">
+          <div class="spinner-rotator">
+            <div class="spinner-left">
+              <div class="spinner-circle"></div>
+            </div>
+            <div class="spinner-right">
+              <div class="spinner-circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-------   Header star ------>
+  <header class="header-area">
+    <div class="navbar-area">
+      <!---- navbar star--->
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img class="image" src="assets/img/header/logo/landapp-logo.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link"  href="home">Home</a>
+                </li>
+                <li class="nav-item dropdown ">
+                  <a
+                    class="nav-link dropdown-toggle f"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="true"
+                  >
+                  <i class="fa fa-envelope-open-o" ></i>
+                  </a>
+                  <ul class="dropdown-menu f">
+                    <li> <form action="/logout" method="post"><input type="submit" class="dropdown-item" value="Logout"></form>
+                    <li>
+                      <a class="dropdown-item" href="#">Setting</a>
+                    </li>
+                    <li class="dropdown-item">
+                      <a class="ndropdown-item"  href="developers">Developers</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+    <!---- navbar end--->
+    <section>    <div class="header-hero" data-scroll-index="0">
+      <!---- home star ------>
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="shape shape-3"></div>
+      <div class="shape shape-4"></div>
+      <div class="shape shape-5"></div>
+      <div class="shape shape-6"></div>
+      <div class="container bb" style="margin-top: 100px;">
+        
+        <div class="container">
+          <div class="header-shape-1"></div>
+          <div class="header-shape-2">
+            <img src="assets/img/header/header-shape-2.svg" alt="">
+          </div>
+        </div>
+        <form action="/searching" method="post">
+         
+         
+          
+               
+                    
+                   <div class="container" style="width:auto;max-width:170vh;margin:auto">
+                 
+                  <div>
+                    <% if(message.length>0&&message!="Searching Successful") {%>
+                      <div class="alert alert-danger" style="max-width: 150vh;width: auto;margin: auto;margin-top: 10px;margin-bottom: 20px;">
+                        <%=message%>
+                        <%}%>
+                        <% if(message.length>0&&message=="Searching Successful") {%>
+                          <div class="alert alert-success" style="max-width: 150vh;width: auto;margin: auto;margin-top: 10px;margin-bottom: 20px;">
+                            <%=message%>
+                            <%}%>
+                  </div>
+                  <form action="/searching" method="post" >
+                    <div class="input-group rounded" style="width: auto;max-width:148vh;margin: auto;" style="margin:auto" >
+                      <input type="search" class="form-control rounded" placeholder="Search" name="search" aria-label="Search" aria-describedby="search-addon" />
+                      <select name="value" class="myInput" style="width: auto;max-width: 80px;opacity: 1;;margin-left:2px">
+                        <option style="color: black;" value="0">ICU</option>
+                        <option style="color: black;" value="1">Apparatus</option>
+                        <option style="color: black;" value="2">Regular Checkups</option>
+                        <option style="color: black;" value="3">Surgery</option>
+                        <option style="color: black;" value="4">Appointment</option>
+                    </select>
+                    <input type="submit" class="btn btn-primary" style="margin:2px;height: 40px;" value="submit">
+                          
+                    </div>
+                    
+                   
+                  </form>
+
+     
+ 
+
+<div class="wrapper" style="margin: auto;margin-top: 50px;margin-bottom: 100px;">
+     
+  <ul class="carousel" style="margin: auto;">
+    <%try{if(val){%>
+      <%if(val==0){%>
+        <%array.forEach((x)=>{%>
+          <li class="card" >
+          <div class="container">
+            <div class="row g-0">
+          <div class="col-md-6">
+            <img src="assets/img/hospital-animation.png"  class="img" alt="...">
+          </div>
+          <div class="col-md-4" style="align-content: end;">
+            <div class="card-body">
+              <h2 class="card-title"><%=x[1].hospitalname%></h2>
+              <h5 class="card-title">Beds Available<%=x[0].beds%></h5>
+              <h5 class="card-title"></h5>
+              <p class="card-text">We Provide Best seervices</p>
+              <h5>Sector :- <%=x[1].org%></h5>
+              <br>
+              <h5>Price :- <%=x[0].cost%> </h5>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+          </li>
+        <%})%>
+      <%}%>
+      <%if(val==1){%>
+        <%array.forEach((x)=>{%>
+          <li class="card" >
+          <div class="container">
+            <div class="row g-0">
+          <div class="col-md-6">
+            <img src="assets/img/hospital-animation.png" class="img" alt="...">
+          </div>
+          <div class="col-md-4" style="align-content: end;">
+            <div class="card-body">
+              <h2 class="card-title"><%=x[1].hospitalname%></h2>
+              <h5 class="card-title"><%=x[0].type%><%=x[0].instrumentname%></h5>
+              <h5 class="card-title"></h5>
+              <p class="card-text">We Provide Best seervices</p>
+              <h5>Sector :- <%=x[1].org%></h5>
+              <br>
+              <h5>Availability :- <%=x[0].availability%> </h5>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+        </li>
+        <%})%>
+      <%}%>
+      <%if(val==2){%>
+        
+          <%array.forEach((x)=>{%>
+            <li class="card">
+            <div class="container">
+              <div class="row g-0">
+            <div class="col-md-6">
+              <img src="assets/img/hospital-animation.png" class="img" alt="...">
+            </div>
+            <div class="col-md-4" style="align-content: end;">
+              <div class="card-body">
+                <h2 class="card-title"><%=x[1].hospitalname%></h2>
+                <h5 class="card-title">Disease <%=x[0].disease%></h5>
+                <h5 class="card-title">General Ward :- <%=x[0].publicward %></h5>
+                <h5 class="card-title">Private Ward :- <%=x[0].privateward %></h5>
+                <p class="card-text">We Provide Best seervices</p>
+                <h5>Sector :- <%=x[1].org%></h5>
+                <br>
+                <h5>Price :- <%=x[0].cost%> </h5>
+               
+              </div>
+            </div>
+              </div>
+            </div>
+          </li>
+        <%})%>
+      <%}%>
+      <%if(val==3){%>
+        <%array.forEach((x)=>{%>
+          <li class="card">
+          <div class="container">
+            <div class="row g-0">
+          <div class="col-md-6">
+            <img src="assets/img/hospital-animation.png" class="img" alt="...">
+          </div>
+          <div class="col-md-4" style="align-content: end;">
+            <div class="card-body">
+              <h2 class="card-title"><%=x[1].hospitalname%></h2>
+              <h5 class="card-title">specialist of <%=x[0].specialist%></h5>
+              <h5 class="card-title">Surgeon Name :- <%=x[0].doctor %></h5>
+              <h5 class="card-title">Year of Experiance :- <%=x[0].yoe%></h5>
+              <p class="card-text">We Provide Best seervices</p>
+              <h5>Sector :- <%=x[1].org%></h5>
+             
+              <br>
+              <h5>Price :- <%=x[0].cost%> </h5>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+        </li>
+        <%})%>
+      <%}%>
+      <%if(val==4){%>
+        <%array.forEach((x)=>{%>
+          <li class="card"><div class="container">
+            <div class="row g-0">
+          <div class="col-md-6">
+            <img src="assets/img/hospital-animation.png" class="img" alt="...">
+          </div>
+          <div class="col-md-4" style="align-content: end;">
+            <div class="card-body">
+              <h2 class="card-title"><%=x[1].hospitalname%></h2>
+              <h5 class="card-title">Specialist of <%=x[0].specialist%></h5>
+              <h5 class="card-title">Surgeon Name :- <%=x[0].doctor%></h5>
+              <h5 class="card-title">Year of Experiance :- <%=x[0].yoe%></h5>
+              <p class="card-text">We Provide Best seervices</p>
+            
+              <h5>Sector :- <%=x[1].org%></h5>
+            
+           
+              <br>
+              <h5>Price :- <%=x[0].cost%> </h5>
+             
+            </div>
+          </div>
+            </div>
+          </div>
+        </li>
+        <%})%>
+      <%}}}catch{%>
+        <li class="card"><div class="container">
+          <div class="row g-0">
+        <div class="col-md-6">
+          <img src="assets/img/hospital-animation.png" class="img" alt="...">
+        </div>
+        <div class="col-md-4" style="align-content: end;">
+          <div class="card-body">
+            <h2 class="card-title">Not found Any Hospital</h2>
+        
+            <p class="card-text">We Provide Best seervices</p>
+            <div class="form-check">
+              <input class="form-check-input" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label" for="flexRadioDefault1">
+                Sector :- Public
+              </label>
+           
+            </div>
+            <br>
+            Price :- -/-
+           
+          </div>
+        </div>
+          </div>
+        </div></li>
+      <%}%>
+  </ul>
+</div>
+
+</div>
+    <!---- home star ------>
+ 
+  </div></section>
+  <!-- --------------Footer Section End ------- -->
+
+
+
+
+
+  <!-- ---- jquery Js ---- -->
+  <script src="assets/js/jquery-1.12.4.min.js"></script>
+  <!-- -------- venobox js ------ -->
+  <script type="text/javascript" src="assets/js/venobox.min.js"></script>
+  <!-- ---------- wow js ---------- -->
+  <script src="assets/js/wow.min.js"></script>
+  <!-- ---------- tiny slider js --------- -->
+  <script src="assets/js/tiny-slider.js"></script>
+  <!-- ---------- scrollit js ---------- -->
+  <script src="assets/js/scrollIt.min.js"></script>
+  <!-- -------- font awsome js --------- -->
+  <script src="assets/js/all.js"></script>
+  <!-- ---- Bootstrap Js ---- -->
+  <script src="assets/js/bootstrap.min.js"></script>
+  <!-- ---- main js --- -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
